@@ -1,1 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>El Salvador Parking Finder</title>
+  <style>
+    /* Add some basic CSS styles for improved visual presentation */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
 
+    h1, h2 {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input[type="text"] {
+      width: 300px;
+      padding: 5px;
+    }
+
+    button[type="submit"],
+    button {
+      padding: 5px 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button[type="submit"]:hover,
+    button:hover {
+      background-color: #45a049;
+    }
+
+    #parking-spaces li {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Welcome to El Salvador Parking Finder</h1>
+
+  <h2>Find Available Parking</h2>
+  <form id="search-form">
+    <label for="location">Location:</label>
+    <input type="text" id="location" name="location" placeholder="Enter a location" required>
+    <button type="submit">Search</button>
+  </form>
+
+  <h2>Available Parking Spaces</h2>
+  <ul id="parking-spaces"></ul>
+
+  <h2>Wish to rent your parking lot </h2>
+  <ul id="parking-spaces"></ul>
+
+  <div class="link">
+    <p>For Parking Lot Owners and Individuals Renting Out Personal Parking Spaces, click here:</p>
+    <button onclick="navigateToFeaturesPage()">Click here</button>
+  </div>
+
+  <script src="script.js"></script> <!-- Assuming JavaScript code is moved to script.js file -->
+  <script>
+    function navigateToFeaturesPage() {
+      window.location.href = "https://rentparking.geovannicotovas.repl.co";
+    }
+  </script>
+</body>
+</html>
