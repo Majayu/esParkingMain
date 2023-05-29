@@ -1,0 +1,95 @@
+document.addEventListener('DOMContentLoaded', function() {
+  var searchForm = document.getElementById('search-form');
+  var locationInput = document.getElementById('location');
+  var parkingSpacesList = document.getElementById('parking-spaces');
+
+  searchForm.addEventListener('submit', function(event) {
+    event.preventDefault();
+    var location = locationInput.value.trim();
+    if (location !== '') {
+      var parkingSpaces = getParkingSpaces(location);
+      displayParkingSpaces(parkingSpaces);
+    }
+  });
+
+  function getParkingSpaces(location) {
+    var parkingSpaces = [
+      { owner: 'John Doe', address: '123 Main Street' },
+      { owner: 'Jane Smith', address: '456 Elm Street' }
+      // Additional parking spaces
+    ];
+    return parkingSpaces;
+  }
+  
+//Here is where the code for renting a lot begins 
+  
+  function displayParkingSpaces(parkingSpaces) {
+    parkingSpacesList.innerHTML = '';
+
+    parkingSpaces.forEach(function(parkingSpace) {
+      var listItem = document.createElement('li');
+      var heading = document.createElement('h3');
+      var owner = document.createElement('p');
+      var address = document.createElement('p');
+      var reserveButton = document.createElement('button');
+
+      heading.textContent = 'Parking Space';
+      owner.textContent = 'Owner: ' + parkingSpace.owner;
+      address.textContent = 'Address: ' + parkingSpace.address;
+      reserveButton.textContent = 'Reserve';
+
+      listItem.appendChild(heading);
+      listItem.appendChild(owner);
+      listItem.appendChild(address);
+      listItem.appendChild(reserveButton);
+      parkingSpacesList.appendChild(listItem);
+    });
+  }
+});
+
+function navigateToFeaturesPage() {
+  window.location.href = "features.html";
+}
+
+document.getElementById('search-form').addEventListener('submit', function(event) {
+  event.preventDefault();
+  var locationInput = document.getElementById('location');
+  var location = locationInput.value;
+  if (location.trim() !== '') {
+    var parkingSpaces = getParkingSpaces(location);
+    displayParkingSpaces(parkingSpaces);
+  }
+});
+
+function getParkingSpaces(location) {
+  var parkingSpaces = [
+    { owner: 'John Doe', address: '123 Main Street' },
+    { owner: 'Jane Smith', address: '456 Elm Street' }
+    // Additional parking spaces
+  ];
+  return parkingSpaces;
+}
+
+function displayParkingSpaces(parkingSpaces) {
+  var parkingSpacesList = document.getElementById('parking-spaces');
+  parkingSpacesList.innerHTML = '';
+
+  parkingSpaces.forEach(function(parkingSpace) {
+    var listItem = document.createElement('li');
+    var heading = document.createElement('h3');
+    var owner = document.createElement('p');
+    var address = document.createElement('p');
+    var reserveButton = document.createElement('button');
+
+    heading.textContent = 'Parking Space';
+    owner.textContent = 'Owner: ' + parkingSpace.owner;
+    address.textContent = 'Address: ' + parkingSpace.address;
+    reserveButton.textContent = 'Reserve';
+
+    listItem.appendChild(heading);
+    listItem.appendChild(owner);
+    listItem.appendChild(address);
+    listItem.appendChild(reserveButton);
+    parkingSpacesList.appendChild(listItem);
+  });
+}
